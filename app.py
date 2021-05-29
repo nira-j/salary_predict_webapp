@@ -10,8 +10,11 @@ def home():
 @app.route("/application", methods=['POST'])
 def application():
     if request.method=='POST':
-        val=int(request.form.get('value'))
+        val=request.form.get('value')
+        if val =="":
+            val=0.0
+        val=float(val)
         out=int(model.predict([[val]]))
         
         return render_template("output.html", output=str(out))
-app.run(host="172.17.0.2",debug=True)
+app.run(host="192.168.43.226",debug=True)
