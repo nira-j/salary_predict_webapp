@@ -17,4 +17,4 @@ def application():
         out=int(model.predict([[val]]))
         
         return render_template("output.html", output=str(out))
-app.run(host="192.168.43.226",debug=True)
+app.run(host="172.17.0.2",debug=True)
