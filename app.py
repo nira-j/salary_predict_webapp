@@ -21,4 +21,5 @@ def application():
     
 s = socket.gethostname()
 ip = socket.gethostbyname(s)
-app.run(host = ip, debug=True)
+print(ip)
+app.run(host = "0.0.0.0", debug=True)
