@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 import joblib
-import socket
 
 model=joblib.load('salary_predict.pk1')
 app=Flask(__name__)
@@ -19,7 +18,4 @@ def application():
         
         return render_template("output.html", output=str(out))
     
-s = socket.gethostname()
-ip = socket.gethostbyname(s)
-print(ip)
 app.run(host = "0.0.0.0", debug=True)
